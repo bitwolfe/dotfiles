@@ -1,0 +1,11 @@
+
+mafredri/zsh-async
+rupa/z
+Tarrasch/zsh-bd
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+
+sindresorhus/pure
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+lukechilds/zsh-better-npm-completion

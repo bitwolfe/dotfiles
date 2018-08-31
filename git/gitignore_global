@@ -1,0 +1,10 @@
+.DS_Store
+.svn
+.idea
+.project
+.settings
+.vscode/
+
+Thumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
