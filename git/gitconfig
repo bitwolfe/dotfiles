@@ -23,3 +23,6 @@
   fetchJobs = 4
 [log]
   showSignature = false
+[user]
+	email = joakim@bitwolfe.io
+	name = Joakim Nyman

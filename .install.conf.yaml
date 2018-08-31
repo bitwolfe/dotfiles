@@ -7,7 +7,7 @@
 - clean: ['~']
 
 - shell:
-    - [./scripts/install_dependencies, Installing dependencies]
+    - [zsh ~/.dotfiles/scripts/install_dependencies, Installing dependencies]
     - [curl -sL git.io/antibody | sh -s, Installing Antibody]
     - [antibody bundle <~/.dotfiles/zsh/plugins.txt >~/.zsh_plugins.sh, Install plugin bundle]
 

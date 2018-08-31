@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 unsetopt BG_NICE
 
 # History

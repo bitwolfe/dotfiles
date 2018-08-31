@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # Setting and editing of env variables.
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
