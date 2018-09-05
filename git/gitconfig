@@ -10,6 +10,7 @@
   commend = commit --amend --no-edit
   fpr = fetch-pr
   lt = log --tags --decorate --simplify-by-decoration --oneline
+  st = status
 [color]
   diff = auto
   status = auto
@@ -23,6 +24,3 @@
   fetchJobs = 4
 [log]
   showSignature = false
-[user]
-	email = joakim@bitwolfe.io
-	name = Joakim Nyman
