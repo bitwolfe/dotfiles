@@ -24,3 +24,5 @@
   fetchJobs = 4
 [log]
   showSignature = false
+[include]
+  path = .gitconfig_local
