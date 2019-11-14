@@ -9,4 +9,3 @@ zsh-users/zsh-autosuggestions
 denysdovhan/spaceship-prompt
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
-lukechilds/zsh-better-npm-completion
