@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 # Setting and editing of env variables.
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-fi
-
 export EDITOR='nano'
 export SUDO_EDITOR='nano'
 export VISUAL='nano'
 export PAGER='less'
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
+fi
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
@@ -48,12 +48,25 @@ zle -N history-beginning-search-forward-end history-search-end
 [[ -n ${key[Up]} ]] && bindkey "${key[Up]}" history-beginning-search-backward-end
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" history-beginning-search-forward-end
 
+# GPG 2.1.x SSH support
+# See : http://incenp.org/notes/2015/gnupg-for-ssh-authentication.html
+if [[ "$OSTYPE" == darwin* ]]; then
+  gpg-connect-agent /bye
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
+  ssh-add -A 2>/dev/null
+
+  GPG_TTY=$(tty)
+  export GPG_TTY
+fi
+
+# Load NVM
 if [ -d $HOME/.nvm ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 fi
 
+# Load RVM
 if [ -d $HOME/.rvm ]; then
   [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
 fi
