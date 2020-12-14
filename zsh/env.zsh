@@ -22,9 +22,32 @@ fi
 # Remove duplicates in PATH
 typeset -U PATH
 
-# Who doesn't want home and end to work?
-bindkey '\e[1~' beginning-of-line
-bindkey '\e[4~' end-of-line
+# Key bindings
+autoload zkbd
+[[ ! -f ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE ]] && zkbd
+source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE
+
+[[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
+[[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
+[[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
+[[ -n ${key[PageUp]} ]] && bindkey "${key[PageUp]}" up-line-or-history
+[[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
+[[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
+[[ -n ${key[PageDown]} ]] && bindkey "${key[PageDown]}" down-line-or-history
+# [[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
+[[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
+# [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
+[[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
+# History partial search with up/down arrow
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+# bindkey "^[[A" history-beginning-search-backward-end
+# bindkey "^[[B" history-beginning-search-forward-end
+[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" history-beginning-search-backward-end
+[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" history-beginning-search-forward-end
+
 
 if [ -d $HOME/.nvm ]; then
   export NVM_DIR="$HOME/.nvm"
