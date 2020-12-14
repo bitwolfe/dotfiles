@@ -8,7 +8,7 @@
 
 - shell:
     - [zsh ~/.dotfiles/scripts/install_dependencies, Installing dependencies]
-    - [curl -sL git.io/antibody | sh -s - -b /usr/local/bin, Installing Antibody]
+    - [curl -sL git.io/antibody | sudo sh -s - -b /usr/local/bin, Installing Antibody]
     - [antibody bundle <~/.dotfiles/zsh/plugins.txt >~/.zsh_plugins.sh, Install plugin bundle]
 
 - link:
