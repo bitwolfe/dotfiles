@@ -34,3 +34,10 @@ function preexec {
 function postexec {
   set_running_app
 }
+
+# tmux helpers
+function :sp () { tmux split-window }
+function :Sp () { tmux split-window }
+function :vsp () { tmux split-window -h }
+function :Vsp () { tmux split-window -h }
+function peek () { tmux split-window -p 33 $EDITOR $@ || exit; }

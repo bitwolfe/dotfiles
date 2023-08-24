@@ -2,21 +2,39 @@
 
 unsetopt BG_NICE
 
-# History
-HISTFILE=~/.zsh_history # Where to save history to disk
-HISTSIZE=10000 # Lines of history to keep in memory for current session
-SAVEHIST=10000 # Number of history entries to save to disk
+setopt EXTENDED_GLOB     # Use extended globbing syntax
+setopt GLOB_STAR_SHORT   # **.c == **/*.c
 
-# Options - `man zshoptions`
-setopt extended_history # Adds timestamps
-setopt append_history # Append history to the history file (no overwriting)
-setopt inc_append_history # Immediately append to the history file, not just when a term is killed
-setopt share_history # Share history across terminals
-setopt hist_reduce_blanks # Reduce superfluos blanks
-setopt hist_ignore_dups # Ignore duplicates
-setopt hist_ignore_space # Ignore lines beginning with space
-setopt extended_glob # Use extended globbing syntax
-setopt auto_cd # Auto change to a dir without typing cd
-setopt correct # Try to auto-correct
-setopt complete_in_word
-setopt prompt_subst
+setopt AUTO_CD           # Auto change to a dir without typing cd
+setopt CORRECT           # Try to auto-correct
+setopt COMPLETE_IN_WORD
+setopt PROMPT_SUBST
+
+# Sane Quoting: '' escapes a single quote inside single quotes
+setopt RC_QUOTES
+
+# Changing Directories
+
+DIRSTACKSIZE=8
+setopt AUTO_PUSHD
+
+# History
+
+HISTFILE=~/.zsh_history # Where to save history to disk
+HISTSIZE=1000000 # Lines of history to keep in memory for current session
+SAVEHIST=$HISTSIZE # Number of history entries to save to disk
+
+setopt EXTENDED_HISTORY         # Adds timestamps
+setopt HIST_FIND_NO_DUPS        # Don't show things I scroll past
+setopt HIST_IGNORE_DUPS         # Ignore duplicates
+setopt HIST_IGNORE_SPACE        # Ignore lines beginning with space
+setopt HIST_EXPIRE_DUPS_FIRST   # Delete dupes from history first
+setopt HIST_REDUCE_BLANKS       # Reduce superfluos blanks
+setopt HIST_VERIFY              # Confirm before running
+setopt SHARE_HISTORY            # Share history across terminals
+
+# Editing
+
+WORDCHARS=${WORDCHARS/=/}
+
+zshaddhistory () { (( $#1 < 500 )) }

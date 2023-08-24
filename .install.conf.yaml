@@ -12,7 +12,9 @@
     - [antibody bundle <~/.dotfiles/zsh/plugins.txt >~/.zsh_plugins.sh, Install plugin bundle]
 
 - link:
+    ~/.zkbd/default-keymap: zsh/.zkbd/default-keymap
     ~/.zshrc: zsh/.zshrc
     ~/.gitconfig: home/.gitconfig
     ~/.gitignore_global: home/.gitignore_global
     ~/.hyper.js: home/.hyper.js
+    ~/.tmux.conf: home/.tmux.conf

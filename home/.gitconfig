@@ -14,6 +14,7 @@
   fpr = fetch-pr
   lt = log --tags --decorate --simplify-by-decoration --oneline
   st = status
+  restore-file = !git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"
 [color]
   diff = auto
   status = auto
@@ -55,8 +56,6 @@
   fetchJobs = 4
 [log]
   showSignature = false
-[include]
-  path = .gitconfig_local
 [diff]
   tool=code
 [difftool "code"]
@@ -68,3 +67,7 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
+[init]
+  defaultBranch = main
+[include]
+  path = .gitconfig_local
