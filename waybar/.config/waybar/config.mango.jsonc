@@ -1,0 +1,31 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": -2,
+  "spacing" : 0,
+
+  "include": [
+    "~/.config/waybar/modules.mango.json"
+  ],
+
+  "modules-left": [
+    "custom/appmenu",
+    "ext/workspaces",
+    "wlr/taskbar",
+    "custom/music"
+  ],
+  
+  "modules-center": [
+    "dwl/window"
+  ],
+  
+  "modules-right": [
+    "tray",
+    "group/volume",
+    "bluetooth",
+    "network",
+    "custom/power",
+    "clock",
+    "custom/notification"
+  ]
+}
