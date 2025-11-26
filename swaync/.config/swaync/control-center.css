@@ -1,5 +1,5 @@
 /* Import Matugen generated colors */
-@import 'colors.css';
+@import '../matugen/output/colors.css';
 
 /* === Derived dynamic colors === */
 @define-color base alpha(@surface, 0.8);

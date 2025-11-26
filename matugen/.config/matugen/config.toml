@@ -2,20 +2,20 @@
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/colors-matugen.conf'
+output_path = '~/.cache/matugen/kitty-colors.conf'
 post_hook = 'pkill -SIGUSR1 kitty'
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
+output_path = '~/.cache/matugen/hyprland-colors.conf'
 
 [templates.mango]
 input_path = '~/.config/matugen/templates/mango-colors.conf'
-output_path = '~/.config/mango/colors.conf'
+output_path = '~/.cache/matugen/mango-colors.conf'
 
-[templates.waybar]
+[templates.css]
 input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
+output_path = '~/.cache/matugen/colors.css'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
@@ -24,18 +24,6 @@ output_path = '~/.config/gtk-3.0/colors.css'
 [templates.gtk4]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-4.0/colors.css'
-
-[templates.wlogout]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/wlogout/colors.css'
-
-[templates.swaync]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/swaync/colors.css'
-
-[templates.walker]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/walker/colors.css'
 
 [templates.primary]
 input_path = '~/.config/matugen/templates/primary'
