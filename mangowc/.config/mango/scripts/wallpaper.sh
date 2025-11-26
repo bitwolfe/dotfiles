@@ -84,32 +84,6 @@ wallpaperfilename=$(basename $wallpaper)
 _writeLog "Wallpaper Filename: $wallpaperfilename"
 
 # -----------------------------------------------------
-# Wallpaper Effects
-# -----------------------------------------------------
-
-if [ -f $wallpapereffect ]; then
-    effect=$(cat $wallpapereffect)
-    if [ ! "$effect" == "off" ]; then
-        used_wallpaper=$generatedversions/$effect-$wallpaperfilename
-        if [ -f $generatedversions/$effect-$wallpaperfilename ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
-            _writeLog "Use cached wallpaper $effect-$wallpaperfilename"
-        else
-            _writeLog "Generate new cached wallpaper $effect-$wallpaperfilename with effect $effect"
-            notify-send --replace-id=1 "Using wallpaper effect $effect..." "with image $wallpaperfilename" -h int:value:33
-            source $HOME/.config/hypr/effects/wallpaper/$effect
-        fi
-        _writeLog "Loading wallpaper $generatedversions/$effect-$wallpaperfilename with effect $effect"
-        _writeLog "Setting wallpaper with $used_wallpaper"
-        touch $waypaperrunning
-        waypaper --wallpaper $used_wallpaper
-    else
-        _writeLog "Wallpaper effect is set to off"
-    fi
-else
-    effect="off"
-fi
-
-# -----------------------------------------------------
 # Detect Theme
 # -----------------------------------------------------
 
@@ -145,20 +119,20 @@ swaync-client -rs
 # Created blurred wallpaper
 # -----------------------------------------------------
 
-if [ -f $generatedversions/blur-$blur-$effect-$wallpaperfilename.png ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
-    _writeLog "Use cached wallpaper blur-$blur-$effect-$wallpaperfilename"
+if [ -f $generatedversions/blur-$blur-$wallpaperfilename.png ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
+    _writeLog "Use cached wallpaper blur-$blur-$wallpaperfilename"
 else
-    _writeLog "Generate new cached wallpaper blur-$blur-$effect-$wallpaperfilename with blur $blur"
+    _writeLog "Generate new cached wallpaper blur-$blur-$wallpaperfilename with blur $blur"
     # notify-send --replace-id=1 "Generate new blurred version" "with blur $blur" -h int:value:66
     magick $used_wallpaper -resize 75% $blurredwallpaper
     _writeLog "Resized to 75%"
     if [ ! "$blur" == "0x0" ]; then
         magick $blurredwallpaper -blur $blur $blurredwallpaper
-        cp $blurredwallpaper $generatedversions/blur-$blur-$effect-$wallpaperfilename.png
+        cp $blurredwallpaper $generatedversions/blur-$blur-$wallpaperfilename.png
         _writeLog "Blurred"
     fi
 fi
-cp $generatedversions/blur-$blur-$effect-$wallpaperfilename.png $blurredwallpaper
+cp $generatedversions/blur-$blur-$wallpaperfilename.png $blurredwallpaper
 
 # -----------------------------------------------------
 # Create rasi file
