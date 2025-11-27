@@ -1,0 +1,137 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$line_break\
+$python\
+$character"""
+
+right_format = """
+$kubernetes\
+$docker_context\
+$package\
+$nodejs\
+$ruby\
+$terraform\
+$aws\
+$azure\
+$custom\
+$status\
+$cmd_duration"""
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[username]
+style_user = "bright-yellow bold italic"
+style_root = "purple bold italic"
+format = "[⭘ $user]($style) "
+disabled = false
+show_always = false
+
+[directory]
+read_only = " 󰌾"
+use_os_path_sep = true
+style = "blue"
+format = '[$path]($style)[$read_only]($read_only_style)'
+
+[cmd_duration]
+format = "[$duration](italic white)"
+
+[git_branch]
+format = " [$symbol$branch]($style)"
+style = "bright-black"
+symbol = " "
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+renamed = ""
+deleted = ""
+conflicted = ""
+untracked = ""
+modified = ""
+staged = ""
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+# Symbols: Nerd Font
+[aws]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[nodejs]
+symbol = " "
+format = " [$symbol$version]($style)"
+style = "bold bright-green"
+version_format = "${raw}"
+detect_files = ["package-lock.json", "yarn.lock"]
+detect_folders = ["node_modules"]
+detect_extensions = []
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+EndeavourOS = " "
+Fedora = " "
+Garuda = "󰛓 "
+Kali = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mint = " "
+NixOS = " "
+Nobara = " "
+Pop = " "
+Raspbian = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+format = " [$symbol$version]($style)"
+style = "dimmed yellow italic bold"
+version_format = "${raw}"
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+format = " [$symbol$version]($style)"
+style = "bold bright-yellow"
+version_format = "${raw}"
+
+[ruby]
+symbol = " "
+format = " [$symbol$version]($style)"
+style = "bold red"
+version_format = "${raw}"
+
+[terraform]
+format = " [$symbol$workspace]($style)"
+version_format = "${raw}"
+
