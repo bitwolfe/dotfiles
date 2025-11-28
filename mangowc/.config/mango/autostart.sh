@@ -20,6 +20,9 @@ swww-daemon >/dev/null 2>&1 &
 # top bar
 waybar -c ~/.config/mango/waybar/config.jsonc -s ~/.config/mango/waybar/style.css >/dev/null 2>&1 &
 
+# hypridle and hyprlock
+hypridle -c ~/.config/mango/hypridle.conf >/dev/null 2>&1 &
+
 # keep clipboard content
 wl-clip-persist --clipboard regular --reconnect-tries 0 >/dev/null 2>&1 &
 
