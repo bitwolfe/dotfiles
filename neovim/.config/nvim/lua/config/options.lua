@@ -4,3 +4,4 @@
 
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 6
+vim.g.root_spec = { "cwd" } -- don't want the root dir to change
