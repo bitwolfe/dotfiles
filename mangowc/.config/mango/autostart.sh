@@ -34,9 +34,19 @@ echo "Xft.dpi: 100" | xrdb -merge
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.00
 
 # permission agent
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
+/usr/libexec/polkit-mate-authentication-agent-1 >/dev/null 2>&1 &
 
 #snixembed --fork &
 
 # xdg autostart
-systemctl --user start mango-session.target >/dev/null 2>&1 &
+#systemctl --user start mango-session.target >/dev/null 2>&1 &
+
+/usr/bin/arch-update --tray >/dev/null 2>&1 &
+
+/usr/bin/1password --silent >/dev/null 2>&1 &
+
+/usr/bin/nextcloud --background >/dev/null 2>&1 &
+
+/usr/bin/steam -silent >/dev/null 2>&1 &
+
+/opt/discord/Discord --start-minimized >/dev/null 2>&1 &
