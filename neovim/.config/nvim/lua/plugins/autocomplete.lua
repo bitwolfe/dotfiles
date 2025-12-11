@@ -13,8 +13,12 @@ return {
       completion = {
         documentation = {
           auto_show = false,
+          window = {
+            border = "rounded",
+          },
         },
         menu = {
+          border = "rounded",
           draw = {
             columns = { { "kind_icon" }, { "label", gap = 1 } },
             components = {
@@ -27,6 +31,11 @@ return {
                 end,
               },
             },
+          },
+        },
+        signature = {
+          window = {
+            border = "rounded",
           },
         },
       },

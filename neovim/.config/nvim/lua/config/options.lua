@@ -5,5 +5,3 @@
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 6
 vim.g.root_spec = { "cwd" } -- don't want the root dir to change
-
-vim.o.winborder = "rounded"
