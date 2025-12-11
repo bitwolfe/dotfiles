@@ -11,6 +11,8 @@ swaync -c ~/.config/mango/swaync/config.json -s ~/.config/mango/swaync/style.css
 # night light
 wlsunset -T 3501 -t 3500 >/dev/null 2>&1 &
 
+elephant >/dev/null 2>&1 &
+
 # walker service (app launcher)
 walker --gapplication-service >/dev/null 2>&1 &
 
