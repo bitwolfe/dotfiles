@@ -21,10 +21,10 @@ binds {
 
     // ─── System & Overview ───
     Mod+Tab                         repeat=false { toggle-overview; }
-    Mod+Shift+W                     hotkey-overlay-title="Random Wallpaper" { spawn-sh "waypaper --random &"; }
-    Mod+Ctrl+W                      { spawn-sh "waypaper &"; }
-    Mod+Ctrl+L                      hotkey-overlay-title="Lock Screen" { spawn-sh "~/.config/hypr/scripts/power.sh lock"; }
-    Mod+Ctrl+Q                      hotkey-overlay-title="Logout" { spawn-sh "~/.config/hypr/scripts/wlogout.sh"; }
+    Mod+Shift+W                     hotkey-overlay-title="Randomize Wallpaper" { spawn-sh "waypaper --random &"; }
+    Mod+Ctrl+W                      hotkey-overlay-title="Waypaper" { spawn "waypaper"; }
+    Mod+Ctrl+L                      hotkey-overlay-title="Lock Screen" { spawn-sh "~/.config/niri/scripts/power.sh lock"; }
+    Mod+Ctrl+Q                      hotkey-overlay-title="Logout" { spawn-sh "~/.config/niri/scripts/wlogout.sh"; }
     Mod+Ctrl+N                      hotkey-overlay-title="Reload Waybar" { spawn-sh "killall -SIGUSR2 waybar"; }
 
     // ─── Audio Controls ───
@@ -122,9 +122,9 @@ binds {
     Mod+Equal                       { set-column-width "+10%"; }
     Mod+Shift+Minus                 { set-window-height "-10%"; }
     Mod+Shift+Equal                 { set-window-height "+10%"; }
-    Mod+R                           { switch-preset-column-width; }
-    Mod+Shift+R                     { switch-preset-window-height; }
-    Mod+Ctrl+R                      { reset-window-height; }
+    Mod+X                           { switch-preset-column-width; }
+    Mod+Shift+X                     { switch-preset-window-height; }
+    Mod+Ctrl+X                      { reset-window-height; }
 
     // ─── Modes ───
     Mod+T                           { toggle-window-floating; }
