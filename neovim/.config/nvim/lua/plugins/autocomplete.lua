@@ -53,10 +53,10 @@ return {
             return { "s", "n" }
           end,
         },
-        signature = {
-          window = {
-            border = "rounded",
-          },
+      },
+      signature = {
+        window = {
+          border = "single",
         },
       },
     },
