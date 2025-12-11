@@ -1,0 +1,168 @@
+{
+  "niri/workspaces": {
+    "on-click": "activate",
+    "on-click-right": "deactivate",
+    "ignore-hidden": true,
+    "sort-by-id": true,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+
+  "cffi/niri-taskbar": {
+    "notifications": true
+  },
+
+  "niri/window": {
+    "max-length": 60,
+    "rewrite": {
+      "(.*) - Brave": "$1"
+    },
+    "separate-outputs": true
+  },
+
+  "custom/appmenu": {
+    "format": "󰣇",
+    "on-click": "walker",
+    "on-click-right": "~/.config/niri/scripts/keybindings.sh",
+    "tooltip-format": "Left: Open application launcher\nRight: Show all keybindings"
+  },
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+  "bluetooth": {
+    "format": "󰂲",
+    "format-on": "{icon}",
+    "format-off": "{icon}",
+    "format-connected": "{icon}",
+    "format-icons": {
+      "on": "󰂯",
+      "off": "󰂲",
+      "connected": "󰂱"
+    },
+    "on-click": "blueman-manager",
+    "tooltip-format-connected": "{device_enumerate}"
+  },
+
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 5,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
+  },
+
+  "clock": {
+    "tooltip": false,
+    "format": "{:%H:%M}",
+    "interval": 1
+  },
+
+  "network": {
+    "format": "",
+    "format-wifi": "󰤢 {signalStrength}%",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤠",
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "interval": 5,
+    "on-click": "nm-connection-editor"
+  },
+
+  "group/volume": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "not-volume",
+      "transition-to-left": true,
+      "transition-left-to-right": false,
+      "click-to-reveal": false
+    },
+    "modules": ["pulseaudio", "pulseaudio/slider"]
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pwvucontrol"
+  },
+
+  "pulseaudio/slider": {
+    "min": 5,
+    "max": 100,
+    "rotate": 0,
+    "device": "pulseaudio",
+    "scroll-step": 1
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "rotate": 0,
+    "format-source": "",
+    "format-source-muted": "",
+    "on-click": "pwvucontrol -t 4",
+    "on-click-middle": "volumecontrol.sh -i m",
+    "on-scroll-up": "volumecontrol.sh -i i",
+    "on-scroll-down": "volumecontrol.sh -i d",
+    "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
+    "scroll-step": 5
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+
+  "custom/hypridle": {
+    "format": "",
+    "return-type": "json",
+    "escape": true,
+    "exec-on-event": true,
+    "interval": 60,
+    "exec": "~/.config/niri/scripts/hypridle.sh status",
+    "on-click": "~/.config/niri/scripts/hypridle.sh toggle"
+  },
+
+  "custom/power": {
+    "format": "",
+    "tooltip-format": "Power Menu",
+    "on-click": "~/.config/niri/scripts/wlogout.sh",
+    "on-click-right": "hyprlock"
+  }
+}
+

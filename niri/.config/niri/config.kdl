@@ -23,12 +23,15 @@ environment {
 // ────────────── Startup Applications ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
-spawn-at-startup "swww-daemon" // Wallpaper daemon
+spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "elephant"
+spawn-sh-at-startup "swaync -c ~/.config/niri/swaync/config.json -s ~/.config/niri/swaync/style.css"
+spawn-sh-at-startup "hypridle -c ~/.config/niri/hypridle.conf"
+spawn-sh-at-startup "waybar -c ~/.config/niri/waybar/config.jsonc -s ~/.config/niri/waybar/style.css"
+spawn-at-startup "walker --gapplication-service"
+
 //spawn-at-startup "snixembed --fork"
-spawn-at-startup "~/.config/waybar/launch.sh" // Top bar
-spawn-at-startup "hypridle"
-spawn-at-startup "walker" "--gapplication-service" // App launcher
 
 // ────────────────── Miscellaneous ─────────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous

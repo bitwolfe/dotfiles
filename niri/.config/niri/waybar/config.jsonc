@@ -1,0 +1,27 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": -2,
+  "spacing": 0,
+
+  "include": ["~/.config/niri/waybar/modules.json"],
+
+  "modules-left": [
+    "custom/appmenu",
+    "niri/workspaces",
+    "cffi/niri-taskbar",
+    "custom/music",
+  ],
+
+  "modules-center": ["niri/window"],
+
+  "modules-right": [
+    "tray",
+    "group/volume",
+    "bluetooth",
+    "network",
+    "custom/power",
+    "clock",
+    "custom/notification",
+  ],
+}

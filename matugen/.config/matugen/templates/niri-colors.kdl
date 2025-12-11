@@ -1,0 +1,13 @@
+
+layout {
+  focus-ring {
+    active-color ""
+    inactive-color ""
+  }
+
+  tab-indicator {
+    active-color ""
+    inactive-color ""
+    urgent-color ""
+  }
+}
