@@ -1,0 +1,12 @@
+[Unit]
+Description=HyprIdle Idle Monitoring Service
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/hypridle -c "%h/.config/niri/hypridle.conf"
+Restart=on-failure
+
+[Install]
+WantedBy=niri.service
