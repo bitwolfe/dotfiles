@@ -3,7 +3,7 @@ Description=polkit-agent (MATE)
 After=graphical-session.target
 
 [Service]
-ExecStart=/usr/libexec/polkit-mate-authentication-agent-1
+ExecStart=/usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 Restart=on-failure
 
 [Install]
