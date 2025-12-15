@@ -161,8 +161,7 @@
   "custom/power": {
     "format": "",
     "tooltip-format": "Power Menu",
-    "on-click": "~/.config/niri/scripts/wlogout.sh",
+    "on-click": "~/.config/niri/scripts/powermenu.sh",
     "on-click-right": "hyprlock"
   }
 }
-

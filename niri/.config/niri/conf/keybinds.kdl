@@ -24,7 +24,7 @@ binds {
     Mod+Shift+W                     hotkey-overlay-title="Randomize Wallpaper" { spawn-sh "waypaper --random &"; }
     Mod+Ctrl+W                      hotkey-overlay-title="Waypaper" { spawn "waypaper"; }
     Mod+Ctrl+L                      hotkey-overlay-title="Lock Screen" { spawn-sh "~/.config/niri/scripts/power.sh lock"; }
-    Mod+Ctrl+Q                      hotkey-overlay-title="Logout" { spawn-sh "~/.config/niri/scripts/wlogout.sh"; }
+    Mod+Ctrl+Q                      hotkey-overlay-title="Power Menu" { spawn-sh "~/.config/niri/scripts/powermenu.sh"; }
     Mod+Ctrl+N                      hotkey-overlay-title="Reload Waybar" { spawn-sh "killall -SIGUSR2 waybar"; }
 
     // ─── Audio Controls ───
