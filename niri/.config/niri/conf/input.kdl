@@ -17,6 +17,8 @@ input {
             // localectl set-x11-keymap.
         }
         numlock // Enable numlock on startup
+        repeat-delay 300 // cut the delay by half (from 600ms)
+        repeat-rate 30 // increase repeat rate to 30hz (from 25hz)
     }
 
     focus-follows-mouse max-scroll-amount="95%" // Automatically focus windows under the mouse pointer
