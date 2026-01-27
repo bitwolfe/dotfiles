@@ -1,0 +1,32 @@
+if true then return {} end
+
+return {
+  -- disable all lazyvim plugins here
+  { "folke/snacks.nvim", enabled = false },
+  { "saghen/blink.cmp", enabled = false },
+  { "akinsho/bufferline.nvim", enabled = false },
+  { "lewis6991/gitsigns.nvim", enabled = false },
+  { "nvim-lualine/lualine.nvim", enabled = false },
+  { "mason-org/mason-lspconfig.nvim", enabled = false },
+  { "mason-org/mason.nvim", enabled = false },
+  { "neovim/nvim-lspconfig", enabled = false },
+  { "nvim-treesitter/nvim-treesitter", enabled = false },
+  { "nvim-treesitter/nvim-treesitter-textobjects", enabled = false },
+  { "nvim-lua/plenary.nvim", enabled = false },
+  { "folke/trouble.nvim", enabled = false },
+  { "folke/flash.nvim", enabled = false },
+  { "nvim-mini/mini.ai", enabled = false },
+  { "nvim-mini/mini.pairs", enabled = false },
+  { "folke/noice.nvim", enabled = false },
+  { "stevearc/conform.nvim", enabled = false },
+  { "MagicDuck/grug-far.nvim", enabled = false },
+  { "folke/todo-comments.nvim", enabled = false },
+  { "folke/persistence.nvim", enabled = false },
+  { "windwp/nvim-ts-autotag", enabled = false },
+  { "mfussenegger/nvim-lint", enabled = false },
+  { "nvim-mini/mini.surround", enabled = false },
+  { "folke/ts-comments.nvim", enabled = false },
+  { "nvim-mini/mini.icons", enabled = false },
+  { "folke/lazydev.nvim", enabled = false },
+  { "MunifTanjim/nui.nvim", enabled = false },
+}

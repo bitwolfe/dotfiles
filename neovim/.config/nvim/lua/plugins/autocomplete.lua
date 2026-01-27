@@ -8,13 +8,32 @@ return {
     version = "1.*",
     opts = {
       keymap = {
-        preset = "default",
+        preset = "super-tab",
+        ['<Tab>'] = {
+          function(cmp)
+            if cmp.snippet_active() then return cmp.accept()
+            else return cmp.select_and_accept() end
+          end,
+          'snippet_forward',
+          'fallback'
+        }
       },
       completion = {
         documentation = {
           auto_show = false,
           window = {
             border = "rounded",
+          },
+        },
+        list = {
+          selection = {
+            preselect = function(ctx)
+              return not require("blink.cmp").snippet_active({ direction = 1 })
+            end,
+            auto_insert = function(ctx)
+              return vim.bo.filetype ~= "markdown"
+            end,
+
           },
         },
         menu = {
