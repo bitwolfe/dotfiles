@@ -15,7 +15,7 @@ return {
         desc = "Open Yazi at cwd",
       },
       {
-        "<c-up>",
+        "<leader>fy",
         "<cmd>Yazi toggle<cr>",
         desc = "Toggle Yazi",
       },
