@@ -19,7 +19,9 @@ window-padding-color = extend
 window-width = 180
 window-height = 50
 
-shell-integration-features = no-title,ssh-terminfo
+shell-integration-features = ssh-terminfo,ssh-env
 
 macos-option-as-alt = left
 macos-titlebar-style = tabs
+
+config-file = ?config-linux
