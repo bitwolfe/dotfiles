@@ -78,7 +78,7 @@ window-rule {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layer-Rules
 
 layer-rule {
-    match namespace="^swww-daemon$"
+    match namespace="^awww-daemon$"
     place-within-backdrop true
 }
 

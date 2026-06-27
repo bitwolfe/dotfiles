@@ -17,7 +17,7 @@ elephant >/dev/null 2>&1 &
 walker --gapplication-service >/dev/null 2>&1 &
 
 # wallpaper
-swww-daemon >/dev/null 2>&1 &
+awww-daemon >/dev/null 2>&1 &
 
 # top bar
 waybar -c ~/.config/mango/waybar/config.jsonc -s ~/.config/mango/waybar/style.css >/dev/null 2>&1 &

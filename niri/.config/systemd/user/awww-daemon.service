@@ -1,11 +1,11 @@
 [Unit]
-Description=SWWW Wallpaper Daemon
+Description=AWWW Wallpaper Daemon
 PartOf=graphical-session.target
 After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swww-daemon
+ExecStart=/usr/bin/awww-daemon
 Restart=on-failure
 
 [Install]
