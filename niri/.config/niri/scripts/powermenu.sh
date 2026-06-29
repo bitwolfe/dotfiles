@@ -74,7 +74,7 @@ $reboot)
   run_cmd --reboot
   ;;
 $lock)
-  hyprlock -c "$HOME/.config/niri/hyprlock.conf"
+  hyprlock
   ;;
 $suspend)
   run_cmd --suspend

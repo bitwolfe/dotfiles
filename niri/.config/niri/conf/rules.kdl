@@ -16,7 +16,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.gnome\."#
     draw-border-with-background false
-    geometry-corner-radius 12
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -42,6 +42,7 @@ window-rule {
 window-rule {
     match app-id="zen"
     match app-id="kitty"
+    match app-id="alacritty"
     draw-border-with-background false
 }
 
@@ -65,8 +66,12 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 10
     clip-to-geometry true
+
+    background-effect {
+      blur true
+    }
 }
 
 window-rule { 

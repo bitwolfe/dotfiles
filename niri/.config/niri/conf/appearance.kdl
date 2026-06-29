@@ -3,7 +3,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
 layout {
-    gaps 5 // Gap between windows
+    gaps 10 // Gap between windows
     center-focused-column "never" // Don’t auto-center focused column
     always-center-single-column
 
@@ -36,6 +36,13 @@ layout {
     }
 
     struts {}
+}
+
+blur {
+  passes 3
+  offset 3.0
+  noise 0.02
+  saturation 1.5
 }
 
 cursor {

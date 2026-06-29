@@ -2,10 +2,11 @@
 Description=HyprIdle Idle Monitoring Service
 PartOf=graphical-session.target
 After=graphical-session.target
-Requisite=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
 
 [Service]
-ExecStart=/usr/bin/hypridle -c "%h/.config/niri/hypridle.conf"
+Type=simple
+ExecStart=/usr/bin/hypridle
 Restart=on-failure
 
 [Install]

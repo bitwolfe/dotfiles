@@ -24,13 +24,6 @@
     "separate-outputs": true
   },
 
-  "custom/appmenu": {
-    "format": "󰣇",
-    "on-click": "walker",
-    "on-click-right": "~/.config/niri/scripts/keybindings.sh",
-    "tooltip-format": "Left: Open application launcher\nRight: Show all keybindings"
-  },
-
   "custom/notification": {
     "tooltip": true,
     "format": "{icon}",
