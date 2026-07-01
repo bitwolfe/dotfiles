@@ -71,6 +71,7 @@ window-rule {
 
     background-effect {
       blur true
+      xray false
     }
 }
 
@@ -83,7 +84,13 @@ window-rule {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layer-Rules
 
 layer-rule {
-    match namespace="^awww-daemon$"
+    match namespace="^noctalia-overview*"
     place-within-backdrop true
 }
 
+layer-rule {
+    match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+    background-effect {
+      xray false
+    }
+}
