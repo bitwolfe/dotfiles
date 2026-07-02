@@ -1,0 +1,10 @@
+git:
+  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --first-parent {{branchName}} --
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative --pretty=medium --first-parent
+  pagers:
+    - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+    - {}
+
+gui:
+  nerdFontsVersion: '3'
