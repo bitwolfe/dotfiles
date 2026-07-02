@@ -62,6 +62,13 @@ return {
   opts = {
     terminal = { enabled = true },
     picker = {
+      focus = "list",
+      layout = {
+        cycle = true,
+        preset = function()
+          return vim.o.columns >= 240 and "default" or "vertical"
+        end,
+      },
       matcher = {
         frecency = true,
       },
@@ -86,6 +93,12 @@ return {
           ["K"] = { "preview_scroll_up", mode = { "i", "n" } },
           ["H"] = { "preview_scroll_left", mode = { "i", "n" } },
           ["L"] = { "preview_scroll_right", mode = { "i", "n" } },
+        },
+      },
+      formatters = {
+        file = {
+          truncate = "left",
+          min_width = 60,
         },
       },
     },

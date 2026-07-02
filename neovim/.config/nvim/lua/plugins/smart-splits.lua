@@ -33,7 +33,6 @@ return {
       },
     },
     opts = {
-      at_edge = "stop",
       zellij_move_focus_or_tab = true,
     },
   },
