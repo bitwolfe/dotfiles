@@ -62,7 +62,7 @@ return {
   opts = {
     terminal = { enabled = true },
     picker = {
-      focus = "list",
+      -- focus = "list",
       layout = {
         cycle = true,
         preset = function()
