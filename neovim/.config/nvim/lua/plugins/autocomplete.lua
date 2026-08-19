@@ -6,7 +6,27 @@ return {
   {
     "saghen/blink.cmp",
     version = "1.*",
+    dependencies = {
+      "mgalliou/blink-cmp-tmux"
+    },
     opts = {
+      sources = {
+        default = {
+          "tmux"
+        },
+        providers = {
+          tmux = {
+            module = "blink-cmp-tmux",
+            name = "tmux",
+            opts = {
+              panes = "session",
+              capture_history = false,
+              triggered_only = false,
+              trigger_chars = { "." }
+            }
+          }
+        }
+      },
       keymap = {
         preset = "super-tab",
         ['<Tab>'] = {
