@@ -23,9 +23,21 @@ term = xterm-ghostty
 clipboard-write = allow
 clipboard-read = allow
 clipboard-paste-protection = false
-shell-integration-features = ssh-terminfo,ssh-env
+
+# https://mwolson.org/blog/2025-11-12-ghostty-tmux-uniform-copy-paste/
+copy-on-select = false
+keybind = performable:ctrl+shift+c=copy_to_clipboard
+# rebind cmd+c to ctrl+shift+c
+keybind = super+c=csi:99;6u
+selection-invert-fg-bg = true
+
+shell-integration-features = no-cursor,ssh-terminfo,ssh-env
 
 macos-option-as-alt = left
 macos-titlebar-style = tabs
+
+# Enable Shift+Enter in tmux by remapping as Esc+Enter as tmux
+# does not register Shift+Enter. Requires tmux config as well.
+keybind = shift+enter=text:\x1b\r
 
 config-file = ?config-linux
