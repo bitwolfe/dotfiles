@@ -33,6 +33,7 @@ return {
       },
     },
     opts = {
+      at_edge = "wrap",
       zellij_move_focus_or_tab = true,
     },
   },
