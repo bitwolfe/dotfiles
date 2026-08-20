@@ -102,5 +102,24 @@ return {
         },
       },
     },
+    -- Enable image preview as a floating window
+    image = {
+      enabled = true,
+      doc = {
+        inline = false,
+        float = true,
+        max_width = vim.g.neovim_mode == "notes" and 5 or 60,
+        max_height = vim.g.neovim_mode == "notes" and 2.5 or 30,
+      },
+    },
+    -- This keeps the image on the top right corner, basically leaving your
+    -- text area free, suggestion found in reddit by user `Redox_ahmii`
+    -- https://www.reddit.com/r/neovim/comments/1irk9mg/comment/mdfvk8b/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+    -- styles = {
+    --   snacks_image = {
+    --     relative = "editor",
+    --     col = -1,
+    --   },
+    -- },
   },
 }

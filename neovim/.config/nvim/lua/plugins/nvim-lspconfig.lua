@@ -9,6 +9,11 @@ return {
         enable = true,
       },
       servers = {
+        marksman = {
+          cmd = { "marksman", "server" },
+          filetypes = { "markdown", "markdown.mdx" },
+          root_markers = { ".marksman.toml", ".git" }
+        },
         rubocop = {
           cmd = { "bundle", "exec", "rubocop", "--lsp" },
           root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
