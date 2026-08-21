@@ -9,10 +9,14 @@ return {
         enable = true,
       },
       servers = {
-        marksman = {
-          cmd = { "marksman", "server" },
-          filetypes = { "markdown", "markdown.mdx" },
-          root_markers = { ".marksman.toml", ".git" }
+        markdown_oxide = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
         },
         rubocop = {
           cmd = { "bundle", "exec", "rubocop", "--lsp" },
