@@ -105,6 +105,17 @@ return {
     -- Enable image preview as a floating window
     image = {
       enabled = true,
+      resolve = function(file, src)
+        local vault = vim.fs.root(file, { ".obsidian", ".moxide.toml" })
+        if not vault then
+          return
+        end
+
+        local attachment = vim.fs.joinpath(vault, "99 - Meta", "attachments", src)
+        if vim.uv.fs_stat(attachment) then
+          return attachment
+        end
+      end,
       doc = {
         inline = false,
         float = true,
