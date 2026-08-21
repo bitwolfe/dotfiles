@@ -46,7 +46,7 @@ return {
         stylelint_lsp = {
           filetypes = { "css", "scss", "less" },
           settings = {
-            stylelintplus = {
+            stylelint = {
               autoFixOnFormat = true,
             },
           },
