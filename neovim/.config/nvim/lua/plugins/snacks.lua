@@ -1,6 +1,28 @@
 return {
   "folke/snacks.nvim",
   keys = {
+    {
+      "<leader>ui",
+      function()
+        Snacks.toggle({
+          name = "Inline Images",
+          get = function()
+            return Snacks.image.config.doc.inline
+          end,
+          set = function(state)
+            Snacks.image.config.doc.inline = state
+
+            local buf = vim.api.nvim_get_current_buf()
+            Snacks.image.placement.clean(buf)
+            pcall(vim.api.nvim_del_augroup_by_name, "snacks.image.inline." .. buf)
+            pcall(vim.api.nvim_del_augroup_by_name, "snacks.image.doc." .. buf)
+            vim.b[buf].snacks_image_attached = nil
+            Snacks.image.doc.attach(buf)
+          end,
+        }):toggle()
+      end,
+      desc = "Toggle Inline Images",
+    },
     -- Switch default to vertical mode for git log
     {
       "<leader>gl",
