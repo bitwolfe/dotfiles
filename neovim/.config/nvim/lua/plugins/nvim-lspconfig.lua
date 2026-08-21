@@ -9,15 +9,6 @@ return {
         enable = true,
       },
       servers = {
-        markdown_oxide = {
-          capabilities = {
-            workspace = {
-              didChangeWatchedFiles = {
-                dynamicRegistration = true,
-              },
-            },
-          },
-        },
         rubocop = {
           cmd = { "bundle", "exec", "rubocop", "--lsp" },
           root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
