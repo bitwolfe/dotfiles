@@ -10,6 +10,8 @@ font-size = 14
 font-thicken = true
 font-thicken-strength = 150
 
+custom-shader = shaders/cursor_warp.glsl
+
 scrollback-limit = 10000
 
 window-padding-x = 6
