@@ -1,0 +1,17 @@
+
+default: true
+
+# Multiple blank lines
+MD012: false
+# Line length
+MD013:
+  line_length: 120
+  # disable checks for elements that often exceed the limit
+  code_blocks: false
+  tables: false
+  headings: false
+
+# Dont mark "tags" as invalid headings
+MD018: false
+# Blanks around lists
+MD032: false
