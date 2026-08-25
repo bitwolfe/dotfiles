@@ -37,6 +37,31 @@ return {
       },
     },
   },
+  -- Adjust some render-markdown defaults
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    ft = { "markdown" },
+    opts = {
+      heading = {
+        icons = { '󰲡 ', '󰲣 ', '󰲥 ', '󰲧 ', '󰲩 ', '󰲫 ' },
+        position = 'inline',
+        -- border = true,
+        -- border_virtual = true,
+      },
+      code = {
+        language_border = ' ',
+        language_left = '',
+        language_right = '',
+      }
+    },
+    config = function (_, opts)
+      require('render-markdown').setup(opts)
+
+      -- Override inline code background color to match code blocks for text readability
+      local code_block = vim.api.nvim_get_hl(0, { name = 'RenderMarkdownCode', link = false })
+      vim.api.nvim_set_hl(0, 'RenderMarkdownCodeInline', { bg = code_block.bg })
+    end,
+  },
   -- Make the markdown linter follow some global rules
   {
     "mfussenegger/nvim-lint",
