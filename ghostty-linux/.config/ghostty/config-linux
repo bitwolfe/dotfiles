@@ -7,3 +7,29 @@
 theme = TokyoNight
 font-family = JetBrainsMono Nerd Font
 font-size = 10
+
+# Window Configuration
+window-decoration = false
+background-opacity = 1.0
+background-blur-radius = 32
+
+# Tab configuration
+gtk-titlebar = false
+
+# Shell integration
+shell-integration = detect
+shell-integration-features = cursor,sudo,title,no-cursor
+keybind = shift+enter=text:\n
+
+# Disable in-app Ghostty toast notifications
+app-notifications = false
+
+# Material 3 UI elements
+unfocused-split-opacity = 0.7
+unfocused-split-fill = #44464f
+
+# Rando stuff
+gtk-single-instance = true
+
+# Dank color generation
+theme = dankcolors
